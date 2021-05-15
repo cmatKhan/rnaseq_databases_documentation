@@ -1,0 +1,38 @@
+site_name: cryptococcus_database
+site_description: a database to store scerevisiae sample metadata
+repo_url: https://github.com/BrentLab/KN99_database
+site_dir: site
+copyright: Copyright &copy; 2020, <a href="https://github.com/cmatKhan">cmatKhan</a>.
+dev_addr: 0.0.0.0:8001
+
+plugins:
+  - search
+
+nav:
+  - Home: 'index.md'
+  - Development:
+    - Install: Development/install.md
+    - Contribute: Development/contribute.md
+  - API:
+    - Users: 'API/users.md'
+    - Authentication: 'API/authentication.md'
+    - Metadata API Instructions: API/metadata_api_instructions.md
+  - Databases:
+    - KN99 Tables:
+      - 'Databases/KN99_Tables/BioSample.md'
+      - 'Databases/KN99_Tables/RnaSample.md'
+      - 'Databases/KN99_Tables/S1cdnaSample.md'
+      - 'Databases/KN99_Tables/S2cdnaSample.md'
+      - 'Databases/KN99_Tables/Library.md'
+      - 'Databases/KN99_Tables/FastqFiles.md'
+      - 'Databases/KN99_Tables/QualityAssess.md'
+      - 'Databases/KN99_Tables/Counts.md'
+    - S288C_R64 Tables:
+      - 'Databases/S288C_R64_Tables/BioSample.md'
+      - 'Databases/S288C_R64_Tables/RnaSample.md'
+      - 'Databases/S288C_R64_Tables/S1cdnaSample.md'
+      - 'Databases/S288C_R64_Tables/S2cdnaSample.md'
+      - 'Databases/S288C_R64_Tables/Library.md'
+      - 'Databases/S288C_R64_Tables/FastqFiles.md'
+      - 'Databases/S288C_R64_Tables/QualityAssess.md'
+      - 'Databases/S288C_R64_Tables/Counts.md'

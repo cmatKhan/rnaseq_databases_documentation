@@ -16,3 +16,5 @@ If you plan on contributing to the codebase, please read this first: [Contribute
 For programmatic users, see the [API Documentation](Api/)
 
 For Descriptions of tables in the databases for a given organism, see [Databases](Databases/)
+
+For Definitions of various experimental subsets of the databases, see [Set Defintions](Set_Definitions/)

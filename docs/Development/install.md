@@ -54,7 +54,7 @@ Follow the steps here to create a postgresql database:
 
 ## Clone the repository and configure  
 
-1. Once you are signed in and have your user, ssh, etc all set up the way you want it (or your are installing this locally), `git clone` the repo to the place where you want to keep the source code.
+- Once you are signed in and have your user, ssh, etc all set up the way you want it (or your are installing this locally), `git clone` the repo to the place where you want to keep the source code.
 
  - Note: If you don't want to use postgresql, for instance if you are doing local development, then at this point, you could use docker and skip any other downloading/configuring. Just do this:
 
@@ -77,7 +77,7 @@ docker-compose up
 
 However, if you want to have one less barrier between you and the code, or you are planning to deploy the database from this system, then don't use docker. In that case, follow the instructions below:
 
-2. create a file in the root called `.env`, which will store our environmental variables (like a username). This is already in the .gitignore, but you should go ahead and confirm that. Fill it with the following types of information (The keys included below are required, but for example, if you are not using AWS S3 storage, you may set them to empty strings):
+- create a file in the root called `.env`, which will store our environmental variables (like a username). This is already in the .gitignore, but you should go ahead and confirm that. Fill it with the following types of information (The keys included below are required, but for example, if you are not using AWS S3 storage, you may set them to empty strings):
 
 ```
 DJANGO_SECRET_KEY=aslkdjf!@123123l1kj2laksjdf3
@@ -92,14 +92,23 @@ DATABASE_PASSWORD="your_password"
 HOST_IP="127.0.0.1"
 ```
 
-3. create an empty directory called `.venv`, which pipenv will automatically find. This will mean that the virtual environment will be stored inside the root. This is also in the .gitignore.
+- create an empty directory called `.venv`, which pipenv will automatically find. This will mean that the virtual environment will be stored inside the root. This is also in the .gitignore.
 
-4. edit `manage.py`. In the main() method, set `"DJANGO_CONFIGURATION", "Local")` to either `"Local"`, which is default, or `"Production"`. You can see the config files in the ./config directory. The most important effect of setting the `DJANGO_CONFIGURATION` is that `"Local"` is sqlite, `"Production"` is postgresql.
+- In the root, run `pipenv install -r requirements.txt --python=$(which python)` to install the environment. Note: this has been finnicky about python version -- use the version listed in the Pipfile
 
-5. In the root, run `pipenv install -r requirements.txt` to install the environment. Note: this has been finnicky about python version -- use the version listed in the Pipfile
+- launch the environment with `pipenv shell`
 
-6. launch the environment with `pipenv shell`
+- run the tests to see if this might work: `./manage.py test`. If everything passes, great, if not, debug or issue an issues report (include the error message).
 
+- edit `manage.py`. In the main() method, set `"DJANGO_CONFIGURATION"` to either `"Local"`, which is default, or `"Production"`. You can see the config files in the ./config directory. The most important effect of setting the `DJANGO_CONFIGURATION` is that `"Local"` is sqlite, `"Production"` is postgresql. In fact, if your test above failed, you might check to see if your `DJANGO_CONFIGURATION` is set to `"Local"`, which is what the tests expect
+
+- create the database: `./manage.py makemigrations && ./manage.py migrate`
+
+- create a superuser `./manage.py createsuperuser`
+
+- load the fixtures, if you have any, with something like `./manage.py loaddata fixtures/BioSample.json`. This fills the database with the data in `fixtures`.
+
+- At this point, if you're on your local machine, you can launch the development server with `./manage.py runserver`. If you're deploying with Gunicorn+Nginx, follow the guide linked below. __Don't forget, when you're done getting Gunicorn and Nginx set up, to update your STATIC_ROOT and STATIC_URL in config/common.py (this just tells django where to output the "compiled" database files which will be served) and to then run `./manage.py collectstatic`__  
 ## Configuring Postgresql, Gunicorn and Nginx
 
 Once you are signed in and have your user, ssh, etc all set up the way you want it, `git clone` the repo. Next, follow these instructions[set up django with postgres and gunicorn on ubuntu 20.04](https://www.digitalocean.com/community/tutorials/how-to-set-up-django-with-postgres-nginx-and-gunicorn-on-ubuntu-20-04)  

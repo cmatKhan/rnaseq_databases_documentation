@@ -1,6 +1,6 @@
-site_name: cryptococcus_database
-site_description: a database to store scerevisiae sample metadata
-repo_url: https://github.com/BrentLab/KN99_database
+site_name: Brentlab RNASeq Database(s)
+site_description: Documentation on the Brentlab RNAseq databases
+repo_url: https://github.com/BrentLab/rnaseq_databases_documentation.git
 site_dir: site
 copyright: Copyright &copy; 2020, <a href="https://github.com/cmatKhan">cmatKhan</a>.
 dev_addr: 0.0.0.0:8001
@@ -17,6 +17,8 @@ nav:
     - Users: 'API/users.md'
     - Authentication: 'API/authentication.md'
     - Metadata API Instructions: API/metadata_api_instructions.md
+  - Set Definitions:
+    - Environmental Perturbation: 'Set_Definitions/environmental_perturbation.md'
   - Databases:
     - KN99 Tables:
       - 'Databases/KN99_Tables/BioSample.md'
@@ -36,5 +38,3 @@ nav:
       - 'Databases/S288C_R64_Tables/FastqFiles.md'
       - 'Databases/S288C_R64_Tables/QualityAssess.md'
       - 'Databases/S288C_R64_Tables/Counts.md'
-  - Set Definitions:
-    - Environmental Perturbation: 'Set_Definitions/environmental_perturbation.md'

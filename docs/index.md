@@ -5,9 +5,7 @@
 
 [![Built with](https://img.shields.io/badge/Built_with-Cookiecutter_Django_Rest-F7B633.svg)](https://github.com/agconti/cookiecutter-django-rest)
 
-a database to store cryptococcus neoformans KN99 sample metadata.
-
-Users of the database will be most interested in the information under API > Metadata, though the authentication page may also prove informative if you are having a hard time accessing the database.
+Users of the databases will be most interested in the information under API > Metadata, though the authentication page may also prove informative if you are having a hard time accessing the database.
 
 Instructions for installation for both local development and deployement are here: [Install](Development/install)
 

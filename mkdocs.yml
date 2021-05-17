@@ -8,6 +8,19 @@ dev_addr: 0.0.0.0:8001
 plugins:
   - search
 
+theme:
+    name: readthedocs
+    highlightjs: true
+    include_homepage_in_sidebar: true
+    navigation_depth: 4
+    collapse_navigation: true
+    titles_only: false
+    sticky_navigation: true
+    hljs_languages:
+        - python
+        - R
+        - javascript
+
 nav:
   - Home: 'index.md'
   - Development:

@@ -1,80 +1,15 @@
-## Add data to a table
+# Database API
 
-**Request**:
+If you are a development user, then the easiest way to interact with a database will be by remotely connecting to the database with either Python or R (see [R DBI package](https://dbi.r-dbi.org/)).
 
-`OPTIONS` `/api/v1/<tablename> Authorization: Token: somerandomstringofstuff`
+The following http requests are supported:  
 
-###### Python
+## OPTIONS
 
-```
-import requests
+An options requests returns metadata about a given table.  
 
-url = 'http://127.0.0.1:8000/api/v1/BioSample/'
-headers = {'Authorization': 'Token 9054f7aa9305e012b3c2300408c3dfdf390fcddf'}
-r = requests.get(url, headers=headers)
-```
+Sample output:  
 
-`GET` `/api/v1/<tablename> Authorization: Token: somerandomstringofstuff`
-
-###### Python
-
-```
-import requests
-
-url = 'http://127.0.0.1:8000/api/v1/BioSample/'
-headers = {'Authorization': 'Token 9054f7aa9305e012b3c2300408c3dfdf390fcddf'}
-r = requests.get(url, headers=headers)
-```
-
-`POST` `/api/v1/<tablename> Authorization: Token: somerandomstringofstuff`
-
-###### Node.js/Axios
-
-```
-import axios
-
-const url = 'http://127.0.0.1:8000/api/v1/BioSample'
-const data = {
-  ...
-}
-
-axios.post(url, data, {
-  headers: {
-    'Authorization': `Token ${token}`
-  },
-})
-
-```
-
-`PATCH` `/api/v1/<tablename> Authorization: Token: somerandomstringofstuff`
-
-###### Python
-
-```
-import requests
-
-url = 'http://127.0.0.1:8000/api/v1/BioSample/'
-headers = {'Authorization': 'Token 9054f7aa9305e012b3c2300408c3dfdf390fcddf'}
-r = requests.get(url, headers=headers)
-```
-
-`DELETE` `/api/v1/<tablename> Authorization: Token: somerandomstringofstuff`
-
-###### Python
-
-```
-import requests
-
-url = 'http://127.0.0.1:8000/api/v1/BioSample/'
-headers = {'Authorization': 'Token 9054f7aa9305e012b3c2300408c3dfdf390fcddf'}
-r = requests.get(url, headers=headers)
-```
-
-*Note:*
-
-- Authorization Protected
-
-**Response**: `OPTIONS`
 ```json
 Content-Type application/json
 
@@ -131,7 +66,37 @@ Content-Type application/json
             ...
 ```
 
-**Response**: `GET`
+### OPTIONS: Python
+
+```python
+import requests
+
+url = 'http://127.0.0.1:8000/api/v1/BioSample/'
+headers = {'Authorization': 'Token 9054f7aa9305e012b3c2300408c3dfdf390fcddf'}
+r = requests.options(url, headers=headers)
+```
+
+### OPTIONS: Node.js/Axios
+
+```javascript
+import axios
+
+const url = 'http://127.0.0.1:8000/api/v1/BioSample'
+const token = "laksjdflaskjdflasdjkf"
+
+axios.options(url, {
+  headers: {
+    'Authorization': `Token ${token}`
+  },
+})
+
+```
+
+## GET
+
+Get requests will return data from the database
+
+Sample output:  
 
 ```json
 Content-Type application/json
@@ -160,4 +125,89 @@ Content-Type application/json
             "bioSampleObservations": "",
             ...
 }
+```
+
+### GET: Python
+
+```python
+import requests
+
+url = 'http://127.0.0.1:8000/api/v1/BioSample/'
+headers = {'Authorization': 'Token 9054f7aa9305e012b3c2300408c3dfdf390fcddf'}
+r = requests.get(url, headers=headers)
+```
+
+### GET: Node.js/Axios
+
+```javascript
+import axios
+
+const url = 'http://127.0.0.1:8000/api/v1/BioSample'
+const token = "laksjdflaskjdflasdjkf"
+
+axios.get(url, {
+  headers: {
+    'Authorization': `Token ${token}`
+  },
+})
+
+```
+
+## POST
+
+### POST: Node.js/Axios
+
+```javascript
+import axios
+
+const url = 'http://127.0.0.1:8000/api/v1/BioSample'
+const data = {
+  ...
+}
+
+axios.post(url, data, {
+  headers: {
+    'Authorization': `Token ${token}`
+  },
+})
+```
+
+## PUT/PATCH
+
+[See here for an explanation of the difference between put and patch](https://rapidapi.com/blog/put-vs-patch/)
+
+### PUT: Node.js/Axios
+
+```javascript
+import axios
+
+const url = 'http://127.0.0.1:8000/api/v1/BioSample'
+const data = {
+  ...
+}
+
+axios.patch(url, data, {
+  headers: {
+    'Authorization': `Token ${token}`
+  },
+})
+
+```
+
+### PATCH: Node.js/Axios
+
+```javascript
+import axios
+
+const url = 'http://127.0.0.1:8000/api/v1/BioSample'
+const data = {
+  ...
+}
+
+axios.put(url, data, {
+  headers: {
+    'Authorization': `Token ${token}`
+  },
+})
+
 ```

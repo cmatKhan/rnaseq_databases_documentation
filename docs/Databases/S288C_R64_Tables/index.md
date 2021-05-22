@@ -5,4 +5,6 @@
 - [Library](./Library.md)
 - [FastqFiles](./FastqFiles.md)
 - [QualityAssess](./QualityAssess.md)
-- [Counts](./Counts.md)
+- [Counts](./Counts.md)  
+
+**[Back to general specifications](../GeneralSpecs.md)**

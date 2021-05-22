@@ -33,6 +33,7 @@ nav:
   - Set Definitions:
     - Environmental Perturbation: 'Set_Definitions/environmental_perturbation.md'
   - Databases:
+    - General Specifications: 'Databases/GeneralSpecs.md'
     - KN99 Tables:
       - 'Databases/KN99_Tables/BioSample.md'
       - 'Databases/KN99_Tables/RnaSample.md'

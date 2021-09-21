@@ -1,0 +1,22 @@
+add link to harvard htcf cluster docs
+https://docs.rc.fas.harvard.edu/kb/running-jobs/
+
+https://docs.rc.fas.harvard.edu/kb/submitting-large-numbers-of-jobs/
+
+https://docs.rc.fas.harvard.edu/kb/gpgpu-computing-on-the-cluster/
+
+https://docs.rc.fas.harvard.edu/kb/convenient-slurm-commands/
+
+https://docs.rc.fas.harvard.edu/kb/fairshare/
+
+this includes instructions on how to do recurrent jobs
+https://www.sherlock.stanford.edu/docs/user-guide/running-jobs/
+and job management
+https://www.sherlock.stanford.edu/docs/advanced-topics/job-management/
+
+good overview
+https://researchcomputing.princeton.edu/support/knowledge-base/slurm
+
+good overview with great vocab on thread vs cpu in slurm
+https://login.scg.stanford.edu/faqs/cores/
+https://login.scg.stanford.edu/tutorials/job_scripts/

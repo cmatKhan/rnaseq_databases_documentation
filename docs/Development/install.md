@@ -109,7 +109,7 @@ HOST_IP="127.0.0.1"
 
 - load the fixtures, if you have any, with something like `./manage.py loaddata fixtures/BioSample.json`. This fills the database with the data in `fixtures`.
 
-- At this point, if you're on your local machine, you can launch the development server with `./manage.py runserver`. If you're deploying with Gunicorn+Nginx, follow the guide linked below. __Don't forget, when you're done getting Gunicorn and Nginx set up, to update your STATIC_ROOT and STATIC_URL in config/common.py (this just tells django where to output the "compiled" database files which will be served) and to then run `./manage.py collectstatic`__    
+- At this point, if you're on your local machine, you can launch the development server with `./manage.py runserver`. If you're deploying with Gunicorn+Nginx, follow the guide linked below. __Don't forget, when you're done getting Gunicorn and Nginx set up, to update your STATIC_ROOT and STATIC_URL in config/common.py (this just tells django where to output the "compiled" database files which will be served) and to then run `./manage.py collectstatic`__
 
 ## Configuring Postgresql, Gunicorn and Nginx
 

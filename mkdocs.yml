@@ -30,6 +30,13 @@ nav:
     - Users: 'API/users.md'
     - Authentication: 'API/authentication.md'
     - Metadata API Instructions: API/metadata_api_instructions.md
+    - BrentlabRnaSeqTools: API/rnaseq_tools.md
+  - Experiment Designs:
+    - ZEV induction: 'Environmental_Design/zev_induction.md'
+    - ZEV flood media delay 2: 'Environmental_Design/zev_flood_media_delay_2.md'
+    - ZEV flood media delay 3: 'Environmental_Design/zev_induction/zev_flood_media_delay_3.md'
+    - ZEV induction 30min delay: 'Environmental_Design/zev_induction/zev_induction_30min_delay.md'
+    - ZEV SCgal media comparison: 'Environmental_Design/zev_induction/zev_scgal_media_comparison.md'
   - Set Definitions:
     - Environmental Perturbation: 'Set_Definitions/environmental_perturbation.md'
   - Databases:
